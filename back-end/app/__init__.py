@@ -7,7 +7,7 @@ from config import Config
 
 # Flask-SQLAlchemy plugin
 db = SQLAlchemy()
-# Flask-Migrate plugin
+# # Flask-Migrate plugin
 migrate = Migrate()
 
 
@@ -27,5 +27,6 @@ def create_app(config_class=Config):
     app.register_blueprint(api_bp, url_prefix='/api')
 
     return app
+
 
 from app import models
