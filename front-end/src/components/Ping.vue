@@ -19,6 +19,7 @@ export default {
       axios.get(path)
         .then((res) => {
           this.msg = res.data;
+          this.$toasted.info('Success connect to Flask API', { icon: 'fingerprint' })
         })
         .catch((error) => {
           // eslint-disable-next-line
