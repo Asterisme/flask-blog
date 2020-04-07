@@ -11,7 +11,6 @@
 
 <script>
 import Alert from './Alert'
-
 export default {
   name: 'Home',  //this is the name of the component
   components: {

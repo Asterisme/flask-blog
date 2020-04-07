@@ -69,12 +69,14 @@ def run_migrations_online():
                                 prefix='sqlalchemy.',
                                 poolclass=pool.NullPool)
 
-    connection = engine.connect()
-    context.configure(connection=connection,
-                      target_metadata=target_metadata,
-                      process_revision_directives=process_revision_directives,
-                      render_as_batch=True,  # 增加这个配置项，解决 SQLite 不能删除列的问题
-                      **current_app.extensions['migrate'].configure_args)
+    with connectable.connect() as connection:
+        context.configure(
+            connection=connection,
+            target_metadata=target_metadata,
+            process_revision_directives=process_revision_directives,
+            render_as_batch=True,  # 增加这个配置项，解决 SQLite 不能删除列的问题
+            **current_app.extensions['migrate'].configure_args
+        )
 
     try:
         with context.begin_transaction():

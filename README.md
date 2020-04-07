@@ -1,20 +1,21 @@
 # Flask-blog
+
 # 1.1 如何使用
-基于python3.6，Linux环境下
+环境python3.6，npm6.14，nodejs8.11.2，vue2.9.6
 ## 1.2 Backend
 
-Opne a new terminal:
+打开终端:
 
 ```bash
 $ cd back-end
 $ python -m venv venv
-$ source venv/bin/activate
+$ venv/Scripts/activate.act
 (venv)$ pip install -r requirements.txt
 
-# Flask-Migrate create database
+# 创建更新数据库
 (venv)$ flask db upgrade
 
-# create back-end/.env file, like this
+# 创建.env文件并输入
 FLASK_APP=madblog.py
 FLASK_DEBUG=1
 
@@ -23,7 +24,7 @@ FLASK_DEBUG=1
 
 浏览器访问: `http://localhost:5000/api/ping`
 
-## 2.3 Frontend
+## 2.2 Frontend
 
 Opne a new terminal:
 

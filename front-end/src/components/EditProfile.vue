@@ -25,7 +25,6 @@
 
 <script>
 import store from '../store.js'
-
 export default {
   name: 'EditProfile',  //this is the name of the component
   data () {

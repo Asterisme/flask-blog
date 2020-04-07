@@ -77,7 +77,6 @@ export default {
         // 表单验证没通过时，不继续往下执行，即不会通过 axios 调用后端API
         return false
       }
-
       const path = '/users'
       const payload = {
         username: this.registerForm.username,
